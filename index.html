@@ -1,0 +1,130 @@
+<!-- this is for the home page where the user needs to tell their name and intrest in the quizz among 4 differt catagories -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <!-- added external css files -->
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/utilities.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+
+    <!-- the middle panel where all the content is placed -->
+    <div class="container__home">
+
+        <!-- logo for the home page -->
+        <div class="head__image">
+            <img src="./images/logo.png" alt="#">
+        </div>
+        <h1>Hello user!</h1>
+        <h4>Enter Your name to continue the Quiz.</h4>
+
+        <!-- session for input from user and a btn for welcome the user -->
+        <div class="name_session">  
+            <input type="text" placeholder="ENTER YOUR NAME..." id="userName" required>
+            <button onclick="welcomeAlert()">Enter</button>
+        </div>
+        <p>You'll Have 15 seconds to answer each Questions</p>
+        <hr>
+
+        <!-- session for the interest in which the user wants to start a quiz -->
+        <div class="interest_session">
+            <h1>Select Category</h1>
+            <div class="interests">
+                <button class="btn1" id="sportQuiz">Full-Stack</button>
+                <button class="btn2" id="seriesQuiz">JavaScript</button>
+                <button class="btn3" id="animeQuiz">HTML</button>
+                <button class="btn4" id="brandQuiz">CSS</button>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+    <!-- some rules of the quiz app -->
+    <div class="info_box">
+        <div class="info_title"><h2>Some Rules of this Quiz</h2></div>
+        <div class="info-list">
+            <div class="info">1. You will only have <span> 15 seconds </span> per each questions.</div>
+            <div class="info">2. Once you select your answer, it can't be undone.</div>
+            <div class="info">3. You can't select any option once time goes off.</div>
+            <div class="info">4. You cant exit from the quiz while you are playing.</div>
+            <div class="info">5. You'll get points on the basis of correct answers.</div>
+        </div>
+        <div class="buttons">
+            <button class="quit">Exit Quiz</button>
+            <button class="restart">Continue</button>
+        </div>
+    </div>
+
+
+
+
+    <!-- quiz page -->
+    <div class="quizPage">
+        <header>
+            <div class="sportTitle">Quiz</div>
+            <div class="timerSport">
+                <div class="time_left">Time Left</div>
+                <div class="timerSec">15</div>
+            </div>
+            <div class="time_line"></div>
+        </header>        
+        <section>
+            <div class="que_text">
+                <!-- here we display the question using javascript -->
+            </div>
+            <div class="option_list">
+                <!-- here we display the options using javascript -->
+            </div>
+        </section>
+        <footer>
+            <div class="total_que">
+                <!-- here we can display the total number of questions using javascript -->
+            </div>
+            <button class="next_btn">Next Que</button>
+        </footer>
+    </div>
+
+
+
+
+
+
+    <!-- result box -->
+    <div class="result_box">
+        <div class="resultInfo">
+            <h1>Result</h1>
+        </div>
+        <div class="usernm">
+            <h2 id="printRes"></h2>
+        </div>
+        <div class="completed_msg">You have Sucessfully Completed the Task</div>
+        <div class="score_text">
+            <!-- add using JavaScript -->
+        </div>
+        <div class="buttons">
+            <button class="start_again">Start Again</button>
+            <button class="goToHome">Go to Home</button>
+        </div>
+    </div>
+
+
+
+    <!-- added external javascript file -->
+    <script src="JS/script.js"></script>
+
+    <script src="JS/JSquestion.js"></script>
+    <script src="JS/FSquestions.js"></script>
+    <script src="JS/CSSquestions.js"></script>
+    <script src="JS/HTMLquestion.js"></script>
+
+    
+</body>
+</html> 

@@ -1,0 +1,430 @@
+/* home page style */
+
+/* making the middle box in the middle of body */
+.container__home, .quizPage, .result_box, .info_box{
+    /* added a border to enhance the UI of the web page */
+    box-shadow: 0px 0px 3px black;
+    border-radius: 12px;
+    text-align: center;
+    width: 50%;
+    height: fit-content;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.info_box.activeInfo, 
+.quizPage.activeQuiz, 
+.result_box.activeResult{
+    opacity: 1;
+    z-index: 5;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* styling the logo of the quiz app */
+.head__image{
+    margin-top: 1.4rem;
+}
+.head__image>img{
+    width: 5rem;
+}
+.container__home>h1{
+    margin-bottom: 1.2rem;
+    color: rgb(45, 187, 243);
+}
+
+
+/* welcome field for username */
+.name_session{
+    margin:  1.6rem; /*using size in rem for more responsive design */
+}
+.name_session>input{
+    width: 60%;
+    font-size: 0.8rem;/*using size in rem for more responsive design */
+    padding: 0.6rem;
+    border: none;
+    box-shadow: 0px 0px 3px black;
+    border-radius: 12px;
+}
+.name_session>button{
+    font-size: 1rem;/*using size in rem for more responsive design */
+    margin-left: 1rem;
+    padding: 0.6rem 1.4rem;
+    border-radius: 12px;
+    background-color: rgb(19, 176, 238);
+    border: none;
+    color: var(--wh);
+}
+/* adding some hover effects on button click */
+.name_session>button:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 3px black;
+}
+
+/* styling the paragraph tag */
+.container__home>p{
+    color: rgba(30, 29, 29, 0.528);
+    font-size: 1rem;
+    margin:  1.6rem 0 0.6rem 0;
+}
+
+/* home interest field style */
+.interest_session>h1{
+    margin: 1.2rem 0;
+    color: rgb(45, 187, 243);
+}
+
+/* style interest btns */
+.interest_session .interests  button{
+    font-size: 1rem;/*using size in rem for more responsive design */
+    padding: 0.6rem 1.4rem;
+    margin: 0.8rem 0;
+    color: rgba(30, 29, 29, 0.594);
+    background-color: rgba(144, 212, 239, 0.555);
+    border: 1px solid rgb(3, 176, 244);
+    border-radius: 12px;
+    width: 100%;
+}
+.interest_session .interests{
+    display: grid;   /*  used grid prop to align items */
+    grid-template-columns: repeat(2, 45%);
+    justify-content: space-around;
+}
+
+
+
+/* rules box */
+.info_box{
+    transform: translate(-50%, -50%) scale(0.9);
+    pointer-events: none;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+.info_box .info_title{
+
+    color: rgb(45, 187, 243);
+}
+.info_box .info-list{
+    padding: 15px 30px;
+    margin: 10px;
+}
+.info_box .info-list .info{
+    font-size: 18px;
+    display: flex;
+}
+.info_box .info-list .info span{
+    font-weight: 600;
+    color: rgb(45, 187, 243);
+}
+.info_box .buttons{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+    padding: 10px 30px;
+    border-top: 1px solid lightgray;
+}
+.info_box .buttons button{
+    font-size: 1rem;/*using size in rem for more responsive design */
+    padding: 0.6rem 1.4rem;
+    margin: 0.8rem 0;
+    color: rgba(30, 29, 29, 0.594);
+    background-color: rgba(144, 212, 239, 0.555);
+    border: 1px solid rgb(3, 176, 244);
+    border-radius: 12px;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+
+
+
+
+
+
+/* quiz page */
+.quizPage{
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    transform: translate(-50%, -50%) scale(0.9);
+    width: 50%;
+}
+.quizPage header{
+    position: relative;
+    z-index: 2;
+    height: 70px;
+    padding: 0 30px;
+    border-radius: 5px 5px 0 0;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    justify-content: space-between;
+    box-shadow: 0 3px 5px 1px rgba(0, 0, 0, 0.1);
+}
+
+.quizPage header .sportTitle{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.quizPage header .timerSport{
+    color: blue;
+    background: white;
+    border: 1px solid skyblue;
+    height: 45px;
+    padding: 0 8px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 145px;
+}
+.quizPage header .timerSport .time_left{
+    font-weight: 400;
+    font-size: 17px;
+    user-select: none;
+}
+
+.quizPage header .timerSport .timerSec{
+    font-size: 18px;
+    font-weight: 500px;
+    height: 30px;
+    width: 45px;
+    border-radius: 5px;
+    line-height: 10px;
+    text-align: center;
+    background: black;
+    color: aliceblue;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.quizPage header .time_line{
+    position: absolute;
+    bottom: 0px;
+    left:0px;
+    height: 3px;
+    background: blue;
+}
+section{
+    padding: 25px 30px 20px 30px;
+    background: white;
+}
+section .que_text{
+    font-size: 25px;
+    font-weight: 600;
+}
+section .option_list{
+    padding: 20px 0px;
+    display: block;   
+}
+section .option_list .option{
+    background: aliceblue;
+    border: 1px solid #84c5fe;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-size: 17px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+section .option_list .option:last-child{
+    margin-bottom: 0px;
+}
+section .option_list .option:hover{
+    color: #004085;
+    background: #cce5ff;
+    border: 1px solid #b8daff;
+}
+section .option_list .option.correct{
+    color: #155724;
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+section .option_list .option.incorrect{
+    color: #721c24;
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+section .option_list .option.disabled{
+    pointer-events: none;
+}
+section .option_list .option .icon{
+    height: 26px;
+    width: 26px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 13px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    line-height: 24px;
+}
+.option_list .option .icon.tick{
+    color: green;
+    border-color: green;
+    background: #d4edda; 
+}
+.option_list .option .icon.cross{
+    color: red;
+    border-color: #f8d7da;
+    background: red;  
+}
+
+footer{
+    height: 60px;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid lightgrey;
+}
+footer .total_que span{
+    display: flex;
+    user-select: none;
+}
+footer .total_que span p{
+    font-weight: 500;
+    padding: 0 5px;
+}
+footer .total_que span p:first-child{
+    padding-left: 0px;
+}
+footer button{
+    height: 40px;
+    padding: 0 13px;
+    font-size: 18px;
+    font-weight: 400;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    color: #fff;
+    border-radius: 5px;
+    background: #007bff;
+    border: 1px solid #007bff;
+    line-height: 10px;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.95);
+    transition: all 0.3s ease;
+}
+footer button:hover{
+    background: #0263ca;
+}
+footer button.show{
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+}
+
+
+/* result box that will visible at the end of the quiz */
+.result_box{
+    display: flex;
+    align-items: center;
+    padding: 25px 30px;
+    width: 50%;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0,3s ease;
+}
+.result_box h1{
+    margin-bottom: 1.2rem;
+    color: rgb(45, 187, 243);
+}
+h2{
+    margin-bottom: 1.2rem;
+    color: rgb(45, 187, 243);
+}
+.result_box .completed_msg{
+    font-size: 20px;
+    font-weight: 500;
+}
+.result_box .score_text span{
+    display: flex;
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+.result_box .score_text span p{
+    padding: 0 4px;
+    font-weight: 600;
+}
+.result_box .buttons{
+    display: flex;
+    margin: 20px 0;
+} 
+.result_box .buttons button{
+    margin: 0 10px;
+    height: 45px;
+    padding: 0 20px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid rgb(93, 93, 222);
+    background-color: rgba(144, 212, 239, 0.555);
+    color:  rgba(30, 29, 29, 0.594);
+    transition: all 0.3s ease;
+}
+.buttons button .restart{
+    color: white;
+    background: blue;
+}
+.buttons button .restart:hover{
+    color: blue;
+    background: white;
+}
+
+
+
+/* making content rensosive for all devices */
+
+/* making our quiz app more resposive with media */
+/* we will change the width of the container to 75% when the device screen width is less than 735px */
+@media(max-width:725px){
+    .container__home{
+        width: 75%;
+        height: fit-content;
+    }
+}
+/* we will change the no of column of the grid column when the device screen width is less than 910px */
+@media(max-width:910px){
+    .interest_session .interests{
+        display: grid;
+        grid-template-columns: repeat(1, 80%);
+    }
+}
+
+
+/* making quix box and info box responsive */
+@media(max-width:1050px){
+    .quizPage{
+        width: 90% !important;
+    }
+    .info_box{
+        width: 90% !important;
+    }
+    .info-list{
+        margin: 0%;
+        padding: 0%;
+        text-align: left;
+    }
+    .result_box{
+        width: 90% !important;
+    }
+}
+
